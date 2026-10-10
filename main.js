@@ -18,6 +18,10 @@ class Character {
     }
 
     takeDamage(amount) {
+        if (amount <= 0) {
+            console.log("Урон не может быть меньше или равен нулю!")
+            return;
+        }
         if (this.health < amount) {
             this.health = 0;
         } else {this.health -= amount;

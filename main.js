@@ -62,7 +62,7 @@ class Mage extends Character {
     }
 }
 
-
+// Добавьте класс Archer со своей версией attack() и включите его в общий массив. 
 class Archer extends Character {
     constructor(name, health) {
         super(name, health);
@@ -77,7 +77,7 @@ class Archer extends Character {
 // 1. Создайте одного воина и одного мага. Выведите информацию о каждом. 
 let warrior = new Warrior("Aragorn");
 let mage = new Mage("Gendalf");
-let archer = new Archer("Legolas")
+
 
 warrior.showInfo();
 mage.showInfo();
@@ -99,14 +99,18 @@ warrior.showInfo();
 mage.showInfo();
 
 // 5. Добавьте обоих персонажей в массив. 
-let heroes = [warrior, mage, archer];
+let heroes = [warrior, mage];
 
+let archer = new Archer("Legolas");
+heroes.push(archer);
 
 // 6. Через цикл или forEach() вызовите attack() у каждого элемента массива. 
 // Каждый персонаж должен выполнить свою версию метода. 
 heroes.forEach(function(obj) {
     obj.attack();
 })
+
+
 
 
 // В классе Character используется инкапсуляция: поле #health приватное
